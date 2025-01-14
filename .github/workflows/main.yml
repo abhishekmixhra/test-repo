@@ -22,10 +22,10 @@ jobs:
 
     - name: Copy Code to EC2
       run: |
-        scp -o StrictHostKeyChecking=no -r * ubuntu@13.203.78.36:/var/www/html/  # Adjust IP
+        scp -o StrictHostKeyChecking=no -r * ubuntu@13.203.40.10:/var/www/html/  # Adjust IP
 
     - name: Restart Apache (Optional)
       run: |
-        ssh -o StrictHostKeyChecking=no ubuntu@13.203.78.36 << EOF
+        ssh -o StrictHostKeyChecking=no ubuntu@13.203.40.10 << EOF
         sudo systemctl restart apache2
         EOF
